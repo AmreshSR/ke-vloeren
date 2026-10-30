@@ -85,7 +85,7 @@
                       <select id="leggen"><option>Nog niet zeker</option><option>Ja, graag</option><option>Nee, ik leg zelf</option></select></div>
                   </div>
                   <details class="oq-bezoek">
-                    <summary>Liever eerst langskomen? <small>10% extra korting</small></summary>
+                    <summary>Liever eerst langskomen?</summary>
                     <div class="rij">
                       <div><label for="dag">Voorkeursdag (di – za)</label><input id="dag" type="date"></div>
                       <div><label for="dagdeel">Dagdeel</label><select id="dagdeel"><option value="">Geen voorkeur</option><option>Ochtend (10:00 – 12:00)</option><option>Middag (12:00 – 15:00)</option><option>Late middag (15:00 – 18:00)</option></select></div>

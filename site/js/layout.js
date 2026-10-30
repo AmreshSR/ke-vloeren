@@ -2,7 +2,8 @@
   if(!document.querySelector('link[rel~="icon"]')){const l=document.createElement('link');l.rel='icon';l.type='image/png';l.href=(document.baseURI.replace(/[^/]*$/,'')+'img/favicon.png');document.head.appendChild(l)}
   const top = `
 <a class="skip" href="#hoofdinhoud">Ga naar de inhoud</a>
-<a class="balk" href="showroom.html#afspraak">Plan een afspraak in onze showroom en ontvang <b>10% extra korting</b> op het gehele assortiment <span aria-hidden="true">→</span></a>
+<div class="balk-rij"><a class="balk" href="showroom.html#afspraak">Plan een afspraak in onze showroom in <b>Soest</b> <span aria-hidden="true">→</span></a>
+<div class="wrap balk-wrap"><div class="balk-social"><a href="https://www.facebook.com/profile.php?id=100090220471246" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 8.5V6.8c0-.8.2-1.3 1.4-1.3H17V2.6C16.700 2.500 15.800 2.400 14.700 2.400 12.300 2.400 10.700 3.900 10.700 6.500v2H8v3.200h2.700V21.600H14v-9.900h2.600l.4-3.200z"/></svg></a><a href="https://www.tiktok.com/@ke.vloeren" target="_blank" rel="noopener" aria-label="TikTok"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16.600 3c.3 2.300 1.600 3.700 3.900 3.900v3.100c-1.300.1-2.500-.3-3.800-1.100v5.800c0 7.400-8 9.700-11.200 4.400-2-3.400-.8-9.300 5.500-9.500v3.300c-.5.100-1 .2-1.500.4-1.400.5-2.200 1.500-2 3.100.4 3.100 6.100 4 5.600-2V3z"/></svg></a></div></div></div>
 <header>
   <div class="wrap nav">
     <a class="logo" href="index.html" aria-label="K&E Vloeren, naar de homepage"><img src="img/logo.png" alt="K&E Vloeren – de vloeren specialist"></a>
