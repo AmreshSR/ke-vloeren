@@ -5,6 +5,7 @@
 !/tools/
 !/site-inventaris.md
 !/stijl-en-paginaopbouw.md
+!/.github/
 !/.claude/
 /.claude/*
 !/.claude/launch.json

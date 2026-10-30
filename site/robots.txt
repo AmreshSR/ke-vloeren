@@ -1,0 +1,3 @@
+# Voorbeeldversie, niet indexeren
+User-agent: *
+Disallow: /
