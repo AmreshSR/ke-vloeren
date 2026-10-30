@@ -3,7 +3,7 @@
   const top = `
 <a class="skip" href="#hoofdinhoud">Ga naar de inhoud</a>
 <div class="balk-rij"><a class="balk" href="showroom.html#afspraak">Plan een afspraak in onze showroom in <b>Soest</b> <span aria-hidden="true">→</span></a>
-<div class="wrap balk-wrap"><a class="balk-tel" href="tel:+31357851272" aria-label="Bel ons op 035 785 1272"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2Z"/></svg>035 785 1272</a></div></div>
+<div class="wrap balk-wrap"><span class="balk-status" aria-live="polite"></span></div></div>
 <header>
   <div class="wrap nav">
     <a class="logo" href="index.html" aria-label="K&E Vloeren, naar de homepage"><img src="img/logo.png" alt="K&E Vloeren – de vloeren specialist"></a>
@@ -15,7 +15,6 @@
       <li><a href="contact.html" data-nav="contact">Contact</a></li>
     </ul>
     <div class="nav-rechts">
-      <span class="nav-status" aria-live="polite"></span>
       <a class="btn btn-zand nav-cta" href="tel:+31357851272" aria-label="Bel ons op 035 785 1272"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2Z"/></svg><span class="cta-nr">035 785 1272</span><span class="cta-kort">Bel nu</span></a>
       <button class="burger" aria-label="Menu openen" aria-expanded="false" aria-controls="menu">☰</button>
     </div>
@@ -46,7 +45,7 @@
     if(matchMedia('(prefers-reduced-motion: reduce)').matches){v.controls=true;return}
     new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){const p=v.play();if(p&&p.catch)p.catch(()=>{v.controls=true})}else v.pause()}),{threshold:.25}).observe(v);
   });
-  const nuA=new Date(new Date().toLocaleString('en-US',{timeZone:'Europe/Amsterdam'})),dg=nuA.getDay(),uu=nuA.getHours()+nuA.getMinutes()/60,isOpen=dg>=2&&dg<=6&&uu>=10&&uu<18,st=document.querySelector('.nav-status');
+  const nuA=new Date(new Date().toLocaleString('en-US',{timeZone:'Europe/Amsterdam'})),dg=nuA.getDay(),uu=nuA.getHours()+nuA.getMinutes()/60,isOpen=dg>=2&&dg<=6&&uu>=10&&uu<18,st=document.querySelector('.balk-status');
   if(st){st.classList.add(isOpen?'open':'dicht');st.textContent=isOpen?'Nu geopend · tot 18:00':(dg>=2&&dg<=6&&uu<10?'Gesloten · open vanaf 10:00':'Gesloten · open di – za 10:00')}
   const burger=document.querySelector('.burger'),menu=document.getElementById('menu');
   burger.addEventListener('click',()=>{const o=menu.classList.toggle('open');burger.setAttribute('aria-expanded',o)});
