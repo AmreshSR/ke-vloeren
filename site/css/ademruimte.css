@@ -1,0 +1,678 @@
+/* ===== Ademruimte =====
+   Uitgangspunten (onderzoek + ervaring):
+   - Ruimte komt in grote stappen (8 / 16 / 32 / 64 / 128), niet in kleine verschillen.
+   - Luxe voelt als ca. 1,5x de gebruikelijke ruimte: secties 110-150px hoog, niet 60-90px.
+   - Eén hoofdpunt per sectie; groepjes dicht bij elkaar, groepen ver uit elkaar.
+   - Leesbaar: 50-70 tekens per regel, regelafstand 1,6-1,75.
+   Dit bestand staat bewust als laatste en overschrijft de eerdere maten. */
+
+:root{
+  --sec:clamp(88px,10.5vw,160px);      /* hoogte boven/onder een sectie */
+  --sec-s:clamp(56px,7vw,112px);       /* compacte pagina's (catalogus, juridisch) */
+  --gap:clamp(24px,2.8vw,44px);        /* tussen kaarten */
+  --kolom:clamp(48px,7vw,112px);       /* tussen twee kolommen */
+  --pad:clamp(24px,5vw,72px);          /* zijkant */
+  --kop-onder:clamp(48px,6vw,96px);    /* onder een sectiekop */
+}
+
+body{line-height:1.7}
+.wrap{padding-left:var(--pad);padding-right:var(--pad)}
+section{padding:var(--sec) 0}
+section.compact{padding:var(--sec-s) 0}
+.merken{padding:clamp(72px,8vw,120px) 0}
+.cta{padding:var(--sec) 0;background:var(--donker)}
+.fout{padding:var(--sec) 0}
+
+/* tekst: korte regels, rustige maat */
+.lead{max-width:46ch;font-size:1.12rem;line-height:1.75}
+main p{max-width:66ch}
+.hero-tekst p,.cta p,.fout p,.merk-kaart p,.assort-kaart p,.contact-kaart p{max-width:none}
+.cta p,.fout p{max-width:46ch}
+.sec-kop{margin-bottom:var(--kop-onder);gap:var(--gap)}
+.sec-kop .lead,.pagina-kop .lead{margin-top:clamp(20px,2vw,28px)!important}
+.pagina-kop{padding:clamp(72px,9vw,136px) 0 clamp(56px,7vw,104px)}
+.kruimel{margin-bottom:clamp(24px,3vw,40px)}
+
+/* hero */
+.hero-tekst{gap:0}
+.hero-tekst .in .lead{margin-top:clamp(28px,3vw,40px)!important}
+.hero-knoppen{margin-top:clamp(32px,3.5vw,48px)}
+.hero-info{margin-top:clamp(28px,3vw,40px)}
+.hero-tekst .in>p:first-child{margin-bottom:clamp(24px,3vw,36px)}
+
+/* rasters */
+.kaarten,.stappen,.assort,.contact-drie,.waarden,.merken-groot,.reviews,.galerij-sr,.merken-rij{gap:var(--gap)}
+.over,.missie,.sr-hero,.showroom,.afspraak,.form-uit,.faq,.prod,.stappen-kop{gap:var(--kolom)}
+.detail{gap:var(--kolom);margin-top:clamp(72px,9vw,128px)}
+.cat{gap:clamp(40px,5vw,72px)}
+
+/* kaarten en blokken krijgen meer binnenruimte */
+.kaart-body{padding:26px 26px 30px;gap:10px}
+.kaarten.cat-grid .kaart-body{padding:22px 22px 26px}
+.stap{padding:clamp(36px,4vw,56px) clamp(28px,3vw,40px)}
+.stap .nr{margin-bottom:20px}
+.stap h3{margin-bottom:14px}
+.merk-kaart{padding:clamp(40px,4.5vw,64px) clamp(28px,3vw,44px)}
+.assort-kaart{padding:clamp(36px,4vw,56px) clamp(28px,3vw,40px)}
+.contact-kaart{padding:clamp(36px,4vw,56px) clamp(28px,3vw,40px);gap:18px}
+.waarde{padding:clamp(36px,4vw,56px) clamp(28px,3vw,40px)}
+.review{padding:clamp(36px,4vw,56px);min-height:280px;gap:32px}
+.usp{gap:20px;margin-top:clamp(40px,5vw,64px)}
+.usp-item{padding:28px 28px 28px 24px;gap:24px;grid-template-columns:48px 1fr}
+.usp-item h3{margin-bottom:8px}
+.teller{padding:clamp(26px,3vw,36px) 16px}
+.tellers{margin-top:clamp(40px,5vw,64px);gap:var(--gap)}
+.ervaring{padding:clamp(36px,4vw,56px)}
+.ervaring .kop{margin-bottom:20px}
+.ervaring p{margin-bottom:32px}
+.over .sub{margin-bottom:clamp(24px,3vw,36px)}
+.missie p+p{margin-top:24px}
+.waarom-in{padding:var(--sec) var(--pad) var(--sec) clamp(40px,6vw,104px)}
+.waarom-foto{min-height:clamp(420px,50vw,720px)}
+.info-blok{margin-top:clamp(56px,6vw,88px);padding:clamp(32px,4vw,48px)}
+.contact-onder{margin-top:var(--gap)}
+.contact-onder .tekst{padding:clamp(36px,4vw,56px)}
+.assort-kaart h3,.waarde h3,.merk-kaart b{margin-bottom:14px}
+.merk-kaart p{margin-top:8px}
+.merk-kaart a{margin-top:28px}
+.logo-vak{margin-bottom:24px}
+
+/* showroom / afspraak / offerte */
+.contact-blok{gap:20px;margin:clamp(32px,4vw,48px) 0}
+.contact-blok div{padding-bottom:20px}
+.sr-knoppen{gap:16px}
+.uren{margin:clamp(24px,3vw,36px) 0}
+.uren td{padding:12px 0}
+.form{gap:22px}
+.form .rij{gap:22px}
+.form input,.form textarea,.form select{padding:1rem}
+.prod-knoppen{gap:16px}
+.usp-lijst{margin:clamp(24px,3vw,36px) 0;gap:14px}
+.reken{padding:clamp(28px,3.5vw,44px);margin-top:clamp(36px,4vw,56px)}
+.uitslag{gap:16px;margin-top:20px}
+.bijpassend-kop{margin-bottom:var(--kop-onder)}
+.spec th,.spec td{padding:15px 4px}
+
+/* filters / catalogus */
+.filters{padding:32px 28px}
+.fgroep{padding:22px 0}
+.fopt{padding:7px 0}
+.balk-boven{margin-bottom:28px}
+.chips{margin-bottom:28px}
+
+/* FAQ */
+details{margin-bottom:0}
+.faq-lijst,.faq-groep{gap:12px}
+.faq-groep details{margin-bottom:12px}
+summary{padding:26px 32px}
+details p{padding:0 32px 30px}
+.faq-groep{margin-bottom:clamp(56px,7vw,96px)}
+.tabs{margin-bottom:clamp(48px,6vw,72px)}
+.faq-zoek{margin-bottom:32px}
+.faq-extra{margin-top:28px}
+
+/* juridisch */
+.juridisch h2{margin:40px 0 12px}
+.juridisch p,.juridisch li{margin-bottom:16px}
+.concept{margin-bottom:clamp(36px,4vw,56px)}
+
+/* footer: veel lucht */
+footer{padding:clamp(80px,9vw,136px) 0 112px}
+.foot{gap:clamp(40px,5vw,80px)}
+.foot-kop{margin-bottom:22px}
+.foot ul{gap:12px}
+.foot img{margin-bottom:24px}
+.social{margin-top:28px}
+.onder{margin-top:clamp(56px,7vw,96px);padding-top:28px}
+
+@media (max-width:1020px){
+  .waarom-in{padding:var(--sec) var(--pad)}
+  .over,.missie,.sr-hero,.showroom,.afspraak,.form-uit,.faq,.prod,.stappen-kop{gap:clamp(40px,6vw,64px)}
+}
+@media (max-width:620px){
+  .kaarten.cat-grid .kaart-body{padding:14px 14px 18px}
+  .usp-item{padding:22px}
+}
+.waarom-foto{overflow:hidden}
+
+/* titels: letters en regels dicht op elkaar */
+h1,h2{letter-spacing:-.005em;line-height:.9}
+h1 span,h2 span{letter-spacing:inherit}
+
+/* hero: tekst uitgelijnd op het grid van de rest van de pagina */
+:root{--max:1200px}
+.hero{container-type:inline-size;grid-template-columns:minmax(0,min(60%,max(50%,calc(max(0px,(100% - var(--max))/2) + var(--pad) + 620px)))) 1fr}
+.hero-tekst{
+  margin:0;width:100%;
+  padding-top:clamp(72px,8vw,128px);padding-bottom:clamp(72px,8vw,128px);
+  padding-left:max(var(--pad),calc((100cqw - var(--max))/2 + var(--pad)));
+  padding-right:clamp(32px,4vw,72px);
+}
+.hero-tekst .in{max-width:none;margin:0}
+@media (max-width:1020px){
+  .hero{grid-template-columns:1fr}
+  .hero-tekst{padding:clamp(64px,10vw,96px) var(--pad)}
+}
+.hero-label{max-width:calc(100% - 48px)}
+
+/* "Waarom K&E": kleinere, scherpe foto binnen het grid (geen parallax, geen opschaling) */
+.waarom{container-type:inline-size;align-items:center;column-gap:var(--kolom);padding:var(--sec) 0}
+.waarom-foto{min-height:0;overflow:visible;position:relative;
+  padding-left:max(var(--pad),calc((100cqw - var(--max))/2 + var(--pad)))}
+.waarom-foto img{position:static;inset:auto;width:100%;height:auto;aspect-ratio:3/2;object-fit:cover;transform:none!important;
+  box-shadow:-16px 16px 0 var(--zand)}
+.waarom-in{padding:0 max(var(--pad),calc((100cqw - var(--max))/2 + var(--pad))) 0 0}
+@media (max-width:1020px){
+  .waarom{row-gap:clamp(48px,8vw,72px)}
+  .waarom-foto{padding:0 var(--pad)}
+  .waarom-in{padding:0 var(--pad)}
+}
+
+/* foto even hoog als titel + tekst ernaast */
+.waarom{align-items:stretch}
+.waarom-foto{display:flex}
+.waarom-foto img{flex:1;min-width:0;height:auto;aspect-ratio:auto;width:auto}
+@media (max-width:1020px){
+  .waarom-foto img{flex:none;width:100%;aspect-ratio:3/2}
+}
+
+/* ===== header: rustig, één duidelijke actie ===== */
+.balk{display:block;text-decoration:none;color:var(--donker)}
+.balk:hover{text-decoration:underline;text-underline-offset:3px}
+.balk span{display:inline-block;transition:transform .3s var(--e,ease)}
+.balk:hover span{transform:translateX(4px)}
+
+/* logo: nooit samendrukken of vervormen */
+.nav .logo{flex:none;display:block;line-height:0}
+.nav .logo img{height:44px;width:auto;max-width:none;display:block}
+header.scrolled .nav .logo img{height:38px}
+
+.nav{gap:clamp(24px,3vw,48px)}
+.nav ul{gap:clamp(20px,2.2vw,32px)}
+.nav-rechts{flex:none;gap:0}
+.nav-cta{gap:.7rem;padding:.9rem 1.4rem;font-size:.85rem;letter-spacing:.06em}
+.nav-cta::after{display:none}
+.nav-cta svg{flex:none}
+.cta-kort{display:none}
+@media (max-width:1020px){
+  .nav-rechts{gap:12px;margin-left:auto}
+  .nav-cta{padding:.8rem 1.1rem}
+}
+@media (max-width:520px){
+  .cta-nr{display:none}
+  .cta-kort{display:inline}
+  .nav-rechts .nav-cta{display:inline-flex}
+  .nav{gap:12px}
+}
+
+/* header op telefoon: kleiner logo zodat logo + Bel nu + menu passen */
+@media (max-width:700px){
+  .nav{height:66px;padding-left:16px;padding-right:16px}
+  header.scrolled .nav{height:58px}
+  .nav .logo img{height:32px}
+  header.scrolled .nav .logo img{height:30px}
+  .menu-open #menu,.nav ul.open{top:66px}
+  .nav-cta{padding:.7rem .95rem;font-size:.8rem}
+  .burger{width:42px;height:42px}
+}
+@media (max-width:420px){
+  .nav .logo img{height:27px}
+  header.scrolled .nav .logo img{height:26px}
+  .nav-rechts{gap:8px}
+}
+
+/* ===== productkaart: titel, patronen, prijs ===== */
+.kaart h3{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;line-height:1.1}
+.kaart-meta{font-size:.8rem;letter-spacing:.04em;opacity:.7;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.prijs{flex-wrap:wrap;row-gap:2px}
+.prijs .vanaf{font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;opacity:.7;align-self:center}
+.kaart-body{gap:8px}
+@media (max-width:620px){
+  .kaarten.cat-grid{gap:12px}
+  .kaarten.cat-grid .kaart-body{padding:12px 12px 16px;gap:6px}
+  .kaarten.cat-grid .kaart h3{font-size:1.05rem;min-height:2.2em}
+  .kaarten.cat-grid .kaart-meta{font-size:.7rem}
+  .kaarten.cat-grid .prijs b{font-size:1.4rem}
+  .kaarten.cat-grid .prijs s{font-size:.75rem}
+  .kaarten.cat-grid .prijs small{font-size:.65rem}
+  .kaarten.cat-grid .prijs .vanaf{font-size:.6rem}
+  .kaart .badge{top:8px;left:8px;font-size:.58rem;padding:.22rem .45rem}
+}
+
+/* ===== keuze patroon / toepassing op de productpagina ===== */
+.keuze{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:14px}
+.keuze-label{min-width:104px;font:1.05rem var(--kop);letter-spacing:.08em;text-transform:uppercase;color:var(--zand-donker)}
+.keuze button{padding:.65rem 1.2rem;font:500 .8rem var(--tekst);letter-spacing:.1em;text-transform:uppercase;background:transparent;border:1px solid var(--donker);color:var(--donker);cursor:pointer;transition:background .2s,color .2s}
+.keuze button:hover{background:rgba(39,34,30,.08)}
+.keuze button[aria-pressed="true"]{background:var(--donker);color:var(--tekst-licht)}
+#keuzes{margin:clamp(20px,2.4vw,28px) 0 clamp(20px,2.4vw,28px)}
+#keuzes:empty{display:none}
+@media (max-width:620px){.keuze-label{min-width:100%}}
+
+/* ===== merk los van het model: klein label boven de titel ===== */
+.kaart-body{display:flex;flex-direction:column;flex:1;gap:6px}
+.kaart-body .kaart-merk{margin-bottom:0}
+.kaart-body .prijs{margin-top:auto;padding-top:10px}
+.kaart h3{min-height:0}
+@media (max-width:620px){
+  .kaarten.cat-grid .kaart h3{min-height:0}
+  .kaart-body .kaart-merk{font-size:.6rem;letter-spacing:.12em}
+}
+/* eenheid staat in de intro ("Alle prijzen per m²") en op de productpagina; op kaarten past hij niet naast vanaf + oude prijs */
+.kaart .prijs small{display:none}
+.kaart .prijs{flex-wrap:nowrap;gap:10px;align-items:baseline}
+.kaart .prijs{gap:8px}
+.kaart .prijs b,.kaart .prijs s,.kaart .prijs .vanaf{white-space:nowrap;flex:none}
+.kaart .prijs .vanaf{font-size:.62rem;letter-spacing:.06em}
+.kaarten.cat-grid .prijs b{font-size:1.75rem}
+.kaarten.cat-grid .kaart-body{padding:20px 20px 24px}
+@media (max-width:620px){
+  .kaarten.cat-grid .kaart-body{padding:12px 12px 16px}
+  .kaarten.cat-grid .prijs b{font-size:1.35rem}
+  .kaarten.cat-grid .prijs{gap:6px}
+}
+/* catalogus: iets minder lucht tussen kaarten zodat prijsregels op één regel passen */
+.cat{gap:clamp(32px,4vw,48px)}
+.kaarten.cat-grid{gap:clamp(16px,1.8vw,24px)}
+@media (max-width:620px){.kaarten.cat-grid{gap:12px}}
+.kaarten.cat-grid .prijs{min-height:42px;align-items:baseline}
+
+/* ===== kleiner logo ===== */
+.nav .logo img{height:34px}
+header.scrolled .nav .logo img{height:30px}
+.nav{height:68px}
+header.scrolled .nav{height:60px}
+.foot img{height:38px}
+@media (max-width:700px){
+  .nav{height:60px}
+  header.scrolled .nav{height:54px}
+  .nav .logo img{height:26px}
+  header.scrolled .nav .logo img{height:24px}
+  .nav ul.open{top:60px}
+}
+@media (max-width:420px){
+  .nav .logo img{height:23px}
+  header.scrolled .nav .logo img{height:22px}
+}
+
+/* ===== logo nog kleiner, header weer op oorspronkelijke hoogte ===== */
+.nav{height:76px}
+header.scrolled .nav{height:64px}
+.nav .logo img{height:28px}
+header.scrolled .nav .logo img{height:26px}
+@media (max-width:700px){
+  .nav{height:66px}
+  header.scrolled .nav{height:58px}
+  .nav ul.open{top:66px}
+  .nav .logo img{height:22px}
+  header.scrolled .nav .logo img{height:21px}
+}
+@media (max-width:420px){
+  .nav .logo img{height:20px}
+  header.scrolled .nav .logo img{height:19px}
+}
+
+/* ===== foto in de kop van binnenpagina's (rechts, scherp: nooit groter dan het bronbestand) ===== */
+.pagina-kop{position:relative;overflow:hidden}
+.pagina-kop .wrap{position:relative;z-index:2}
+.pagina-kop[style*="--kop-img"]::after{content:"";position:absolute;top:0;right:0;bottom:0;width:min(42%,768px);background:var(--kop-img) center/cover no-repeat;z-index:0}
+.pagina-kop[style*="--kop-img"]::before{content:"";position:absolute;top:0;right:0;bottom:0;width:min(42%,768px);background:linear-gradient(90deg,var(--donker-2) 0,rgba(60,53,45,0) 38%);z-index:1}
+@media (min-width:1021px){
+  .pagina-kop[style*="--kop-img"] .wrap>*{max-width:min(620px,100%)}
+  .pagina-kop[style*="--kop-img"] .wrap>.kruimel{max-width:none}
+}
+@media (max-width:1020px){
+  .pagina-kop[style*="--kop-img"]::after{width:100%;opacity:.22}
+  .pagina-kop[style*="--kop-img"]::before{display:none}
+}
+@media (prefers-reduced-motion:no-preference){
+  .pagina-kop[style*="--kop-img"]::after{animation:binnen 1.2s var(--e) both}
+}
+@media (max-width:1020px){
+  .pagina-kop[style*="--kop-img"]::after{animation:none;opacity:.2}
+}
+
+/* ===== productpagina: twee kolommen in balans, compacte calculator ===== */
+.prod{grid-template-columns:minmax(0,clamp(340px,42%,480px)) minmax(0,1fr);align-items:stretch;gap:clamp(32px,5vw,80px)}
+.prod-links{display:flex;flex-direction:column;min-width:0}
+.prod-links .usp-links{margin-top:auto;padding-top:clamp(24px,3vw,36px)}
+.prod-info{display:flex;flex-direction:column;justify-content:space-between;gap:clamp(20px,2.4vw,28px);min-width:0}
+.prod-top,.prod-calc{display:flex;flex-direction:column;gap:clamp(20px,2.4vw,28px);min-width:0}
+.prod-kop h1{margin:6px 0 0}
+#keuzes{margin:0}
+#keuzes:empty{display:none}
+.keuze{margin-bottom:12px}
+.keuze:last-child{margin-bottom:0}
+.prod-prijs{display:flex;align-items:baseline;flex-wrap:wrap;gap:6px 14px;margin:0}
+.prod-prijs .badge{margin-left:auto;align-self:center}
+
+/* voordelen: rustig 2x2 */
+.usp-lijst{grid-template-columns:1fr 1fr;gap:10px 24px;margin:0}
+.usp-lijst li{font-size:.9rem;line-height:1.35}
+.usp-info{display:none}
+
+/* calculator: invoer links, uitslag rechts */
+.reken{margin:0;padding:clamp(24px,2.6vw,32px)}
+.reken h2{margin-bottom:16px}
+.reken-rij{display:grid;grid-template-columns:1fr 1fr;gap:20px;align-items:start}
+.reken .check{margin:12px 0 0}
+.reken .uitslag{display:grid;grid-template-columns:1fr;gap:10px;margin:0}
+.reken .uitslag div{padding:12px 16px}
+.reken .uitslag b{font-size:1.8rem}
+.reken>small{margin-top:16px}
+
+/* knoppen in één rij */
+.prod-knoppen{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:12px}
+.prod-knoppen .btn{justify-content:center;padding:.9rem .5rem;font-size:.74rem;letter-spacing:.08em;white-space:nowrap}
+.prod-knoppen .btn::after{display:none}
+
+/* vaste actiebalk (alleen onder 900px) */
+.actiebalk{display:none}
+@media (max-width:899px){
+  .prod{gap:clamp(24px,5vw,40px)}
+  .usp-links{display:none}
+  .usp-info{display:grid}
+  .prod-info{justify-content:flex-start}
+  .prod-prijs .badge{margin-left:0}
+  .thumbs button{width:68px;height:68px}
+  .prod-knoppen{display:none}
+  .actiebalk{display:flex;gap:10px;position:fixed;left:0;right:0;bottom:0;z-index:55;padding:10px var(--pad) calc(10px + env(safe-area-inset-bottom));background:rgba(39,34,30,.97);border-top:1px solid rgba(214,192,163,.25);transform:translateY(110%);transition:transform .3s var(--e,ease)}
+  .actiebalk.toon{transform:none}
+  .actiebalk .btn{flex:1;justify-content:center;padding:.9rem .5rem;white-space:nowrap}
+  .actiebalk .btn-zand{flex:1.7}
+  .actiebalk .btn::after{display:none}
+  body.balk-aan .wa{bottom:84px}
+  body.balk-aan footer{padding-bottom:140px}
+}
+@media (max-width:560px){
+  .reken-rij{grid-template-columns:1fr}
+  .reken .uitslag{grid-template-columns:1fr 1fr}
+  .reken .uitslag b{font-size:1.6rem}
+  .usp-lijst{gap:8px 16px}
+  .usp-lijst li{font-size:.84rem}
+}
+
+/* tablet (600-899px): galerij naast titel/keuzes/prijs, calculator over de volle breedte eronder */
+@media (min-width:600px) and (max-width:899px){
+  .prod{grid-template-columns:minmax(0,clamp(260px,40%,340px)) minmax(0,1fr);grid-template-areas:"links top" "calc calc"}
+  .prod-info{display:contents}
+  .prod-links{grid-area:links}
+  .prod-top{grid-area:top}
+  .prod-calc{grid-area:calc}
+  .galerij .groot{aspect-ratio:1}
+  .reken .uitslag{grid-template-columns:1fr 1fr}
+}
+/* telefoon (tot 599px): alles onder elkaar */
+@media (max-width:599px){
+  .prod{grid-template-columns:1fr}
+  .galerij .groot{aspect-ratio:4/3}
+}
+
+/* ===== lettertypen: Ovo (koppen) + Tenor Sans (tekst) ===== */
+body{font-synthesis:none}
+b,strong{font-weight:400}
+h1,h2,h3{text-transform:none;letter-spacing:-.01em;line-height:1.1;font-weight:400}
+h1{font-size:clamp(2.6rem,5.6vw,4.4rem);line-height:1.04}
+h2{font-size:clamp(2rem,3.8vw,3rem);line-height:1.08}
+h3{font-size:1.35rem}
+h1,h2{letter-spacing:-.012em}
+h1 span,h2 span{letter-spacing:inherit}
+
+/* getallen en grote tekst in Ovo: geen letterspatiëring meer */
+.hero-label b,.band strong,.merk,.merk-kaart b,.prijs b,.prod-prijs b,.teller b,.uitslag b,.stap .nr,.contact-kaart .groot,.fout .nr{letter-spacing:0;text-transform:none}
+.ervaring .kop,.over .sub{text-transform:none;letter-spacing:-.005em}
+.over .sub{font-size:clamp(1.5rem,2.6vw,2rem);line-height:1.2}
+.ervaring .kop{font-size:2.1rem;line-height:1.1}
+.prod-prijs b{font-size:3rem}
+.teller b{font-size:2.6rem}
+.merk-kaart b{font-size:2.2rem}
+.merk{font-size:1.8rem}
+.stap .nr{font-size:3rem}
+.fout .nr{line-height:.9}
+
+/* kleine labels: Tenor Sans, hoofdletters met ruimte (zoals de merklabels) */
+.keuze-label,.juridisch th,.contact-blok dt,.foot-kop,summary,.fgroep h3{font-family:var(--tekst);text-transform:uppercase;letter-spacing:.1em;font-size:.78rem}
+.foot-kop{font-size:.8rem;color:var(--zand)}
+summary{font-size:.9rem;letter-spacing:.06em;line-height:1.4}
+.juridisch th{font-size:.8rem}
+.fgroep h3{font-weight:400;margin-bottom:12px}
+.keuze-label{min-width:104px}
+
+/* nadruk zonder vet (Tenor Sans heeft één gewicht) */
+.balk b{text-decoration:underline;text-underline-offset:3px}
+.balk,.balk a,.review .wie,.contact-blok a,.nav-tel,.skip,.hero-info b{font-weight:400}
+.badge,.btn{font-weight:400}
+.btn{font-size:.78rem;letter-spacing:.14em}
+
+/* ===== offerteblok: berekenen en aanvragen in één kaart ===== */
+.offerte-kaart{background:var(--donker);color:var(--tekst-licht);border-top:3px solid var(--zand);padding:clamp(24px,2.6vw,32px);display:flex;flex-direction:column;gap:18px;min-width:0}
+.oq-kop{display:flex;justify-content:space-between;align-items:baseline;gap:12px}
+.oq-kop h2{font-size:1.5rem;color:var(--zand);margin:0}
+.oq-stap{font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;opacity:.7;white-space:nowrap}
+
+/* stappen liggen in één cel: de kaart is zo hoog als de hoogste stap, er verspringt niets */
+.oq-stappen{display:grid}
+.oq-paneel{grid-area:1/1;min-width:0;visibility:hidden;opacity:0;display:flex;flex-direction:column;gap:16px}
+.oq-paneel.actief{visibility:visible;opacity:1}
+@media (prefers-reduced-motion:no-preference){
+  .oq-paneel{transition:opacity .22s var(--e),visibility 0s linear .22s}
+  .oq-paneel.actief{transition:opacity .25s var(--e) .06s,visibility 0s}
+}
+
+/* velden in de donkere kaart */
+.offerte-kaart label{display:block;font-size:.85rem;margin-bottom:4px}
+.offerte-kaart input:not([type=checkbox]),.offerte-kaart select{width:100%;padding:.85rem 1rem;font:inherit;background:var(--creme-licht);border:1px solid transparent;color:var(--donker);border-radius:0}
+.offerte-kaart input[type=checkbox]{width:18px;height:18px;flex:none;accent-color:var(--zand)}
+.offerte-kaart .check{display:flex;align-items:center;gap:10px;margin:12px 0 0;font-size:.82rem}
+.oq-paneel.form{max-width:none;gap:14px}
+.oq-paneel.form .rij{gap:14px}
+
+/* stap 1 */
+.oq-rij{display:grid;grid-template-columns:1fr 1fr;gap:16px;align-items:start}
+.oq-rij .uitslag{display:grid;grid-template-columns:1fr;gap:10px;margin:0}
+.oq-rij .uitslag[hidden]{display:none}
+.oq-rij:has(.uitslag[hidden]){grid-template-columns:1fr}
+.oq-rij .uitslag div{background:var(--donker-2);padding:12px 16px}
+.oq-rij .uitslag b{display:block;font:1.8rem var(--kop);color:var(--zand);line-height:1;letter-spacing:0}
+.oq-rij .uitslag span{font-size:.75rem;opacity:.8}
+.oq-noot{margin:0;font-size:.75rem;line-height:1.5;opacity:.7;max-width:none}
+.oq-noot a{color:var(--zand)}
+.oq-hoofd{width:100%;justify-content:center}
+.oq-links{display:flex;justify-content:center;gap:10px;margin:0;font-size:.85rem;max-width:none}
+.oq-links a{color:var(--zand);text-underline-offset:3px}
+
+/* stap 2 */
+.oq-samenvatting{margin:0;padding-left:12px;border-left:2px solid var(--zand);font-size:.85rem;line-height:1.45;max-width:none}
+.oq-bezoek{background:none}
+.oq-bezoek[open]{background:none}
+.oq-bezoek summary{display:block;padding:0;font:inherit;font-size:.88rem;letter-spacing:0;text-transform:none;color:var(--zand);cursor:pointer;line-height:1.4}
+.oq-bezoek summary::after{display:none}
+.oq-bezoek summary:hover{background:none;text-decoration:underline;text-underline-offset:3px}
+.oq-bezoek summary small{opacity:.75;margin-left:6px}
+.oq-bezoek .rij{margin-top:12px}
+.oq-acties{display:grid;grid-template-columns:1fr 2fr;gap:12px}
+.oq-acties .btn{justify-content:center}
+
+/* stap 3 */
+.oq-klaar{justify-content:center;align-items:flex-start;gap:14px}
+.oq-klaar h3{color:var(--zand);font-size:1.5rem;margin:0}
+.oq-klaar p{margin:0;max-width:none}
+.oq-klaar a{color:var(--zand)}
+
+@media (max-width:560px){
+  .oq-rij{grid-template-columns:1fr}
+  .oq-rij .uitslag{grid-template-columns:1fr 1fr}
+  .oq-acties{grid-template-columns:1fr 1.6fr}
+}
+
+/* offerteblok iets compacter, voordelen links wat royaler: kolommen sluiten beter aan */
+.prod-top{gap:clamp(16px,1.8vw,20px)}
+.offerte-kaart{padding:clamp(22px,2.2vw,28px);gap:14px}
+.oq-paneel{gap:12px}
+.oq-paneel.form{gap:12px}
+.oq-paneel.form .rij,.oq-rij{gap:12px}
+.offerte-kaart input:not([type=checkbox]),.offerte-kaart select{padding:.72rem .9rem}
+.offerte-kaart .check{margin-top:10px}
+.oq-rij .uitslag div{padding:10px 14px}
+@media (min-width:900px){
+  .prod-links .usp-links{padding-top:clamp(26px,2.6vw,34px);gap:18px 24px;border-top:1px solid rgba(58,51,44,.18)}
+  .prod-links .usp-links li{font-size:.95rem}
+}
+.btn-lijn,.btn-lijn-donker{background:transparent}
+button.btn{font-family:var(--tekst);border-radius:0}
+
+/* tablet en telefoon: geen buurkolom om mee uit te lijnen, dus alleen de actieve stap tonen (geen lege ruimte) */
+@media (max-width:899px){
+  .oq-stappen{display:block}
+  .oq-paneel{display:none}
+  .oq-paneel.actief{display:flex}
+}
+@media (max-width:560px){
+  .oq-acties{display:flex;flex-direction:column-reverse;gap:10px}
+}
+
+/* ===== één geheel: titel, prijs, keuzes en offerte in dezelfde kaart ===== */
+.prod-info{justify-content:flex-start}
+.offerte-kaart{flex:1;gap:0;padding:clamp(26px,3vw,40px);justify-content:space-between;border-top:3px solid var(--zand)}
+.offerte-kaart>*{min-width:0}
+
+/* kop: merk + titel links, prijs rechts */
+.oq-hoofd2{display:flex;justify-content:space-between;align-items:flex-end;gap:20px;flex-wrap:wrap}
+.oq-titel .kaart-merk,.prod-info .oq-titel .kaart-merk{display:block;color:var(--zand);opacity:.85;margin-bottom:6px}
+.offerte-kaart h1{color:var(--tekst-licht);font-size:clamp(2.1rem,3.2vw,2.8rem);line-height:1.05;margin:0}
+.oq-prijs{text-align:right}
+.oq-prijs .prod-prijs{display:flex;flex-wrap:wrap;justify-content:flex-end;align-items:baseline;gap:2px 10px;margin:0}
+.oq-prijs .prod-prijs b{flex:0 0 100%;text-align:right;font-size:clamp(1.9rem,2.8vw,2.4rem);line-height:1.05;color:var(--zand)}
+.oq-prijs .prod-prijs s{color:var(--tekst-licht);opacity:.5;font-size:.85rem}
+.oq-prijs .prod-prijs small{color:var(--tekst-licht);opacity:.7;font-size:.78rem}
+.oq-prijs .prod-prijs .badge{flex:0 0 auto;margin:8px 0 0}
+
+/* secties gescheiden door een haarlijn, steeds hetzelfde ritme */
+.oq-keuzes,.oq-sectie{margin-top:clamp(20px,2.2vw,26px);padding-top:clamp(20px,2.2vw,26px);border-top:1px solid rgba(238,226,214,.14)}
+.oq-keuzes:empty{display:none}
+
+/* keuzes: twee groepen naast elkaar, label erboven */
+.oq-keuzes{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:16px 28px}
+.oq-keuzes .keuze{display:flex;flex-direction:column;align-items:flex-start;gap:10px;margin:0}
+.oq-keuzes .keuze-label{min-width:0;color:var(--tekst-licht);opacity:.65}
+.oq-keuzes .keuze>div,.oq-keuzes .keuze{flex-wrap:wrap}
+.oq-keuzes .keuze button{background:transparent;border:1px solid rgba(238,226,214,.32);color:var(--tekst-licht);padding:.6rem 1rem;font-size:.74rem}
+.oq-keuzes .keuze button:hover{background:rgba(238,226,214,.08);border-color:var(--zand)}
+.oq-keuzes .keuze button[aria-pressed="true"]{background:var(--zand);color:var(--donker);border-color:var(--zand)}
+.oq-keuzes .keuze button{margin-right:8px;margin-bottom:0}
+
+/* calculatordeel: geen eigen kaartrand meer, kop rustiger */
+.oq-sectie .oq-kop{margin-bottom:16px}
+.oq-kop h2{font-size:1.35rem;line-height:1.2;color:var(--tekst-licht)}
+
+/* tablet en telefoon: alles onder elkaar, kaart over de volle breedte, voordelen eronder */
+@media (max-width:899px){
+  .prod{grid-template-columns:1fr;grid-template-areas:none}
+  .prod-info{display:flex;flex-direction:column;gap:clamp(20px,4vw,28px)}
+  .offerte-kaart{flex:none}
+  .usp-info{display:grid}
+}
+@media (min-width:600px) and (max-width:899px){
+  .galerij .groot{aspect-ratio:16/10}
+}
+@media (max-width:560px){
+  .oq-hoofd2{align-items:flex-start}
+}
+
+/* compacter: badge naast het merklabel, keuzeknoppen op één rij */
+.oq-merkrij{display:flex;align-items:center;gap:12px;margin-bottom:8px}
+.oq-merkrij .kaart-merk,.oq-titel .oq-merkrij .kaart-merk{display:inline;margin:0}
+#oq-badge:empty{display:none}
+.oq-prijs .prod-prijs b{flex:0 0 100%}
+.oq-keuzes .keuze-rij{display:flex;flex-wrap:wrap;gap:8px}
+.oq-keuzes .keuze button{margin:0}
+.oq-keuzes{gap:14px 28px}
+.oq-keuzes,.oq-sectie{margin-top:clamp(18px,2vw,22px);padding-top:clamp(18px,2vw,22px)}
+.offerte-kaart{padding:clamp(24px,2.6vw,34px)}
+.oq-hoofd2{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:14px 20px;align-items:end}
+.offerte-kaart h1{font-size:clamp(2rem,2.8vw,2.5rem)}
+@media (max-width:480px){.oq-hoofd2{grid-template-columns:1fr}.oq-prijs{text-align:left}.oq-prijs .prod-prijs{justify-content:flex-start}.oq-prijs .prod-prijs b{text-align:left}}
+.oq-prijs .prod-prijs{display:grid;grid-template-columns:auto auto;justify-content:end;align-items:baseline;gap:2px 10px}
+.oq-prijs .prod-prijs b{grid-column:1/-1;flex:none;justify-self:end}
+@media (max-width:480px){.oq-prijs .prod-prijs{justify-content:start}.oq-prijs .prod-prijs b{justify-self:start}}
+.prod-links{gap:clamp(20px,2.4vw,28px)}
+.prod-links .usp-links{margin-top:auto}
+@media (max-width:899px){
+  .prod-links,.prod-info{grid-area:auto}
+}
+
+/* geen keuzes (bijv. SH-serie): kenmerken in plaats van een leeg vlak */
+.oq-kenm{grid-column:1/-1;display:grid;grid-template-columns:repeat(auto-fit,minmax(104px,1fr));gap:14px 20px;margin:0}
+.oq-kenm dt{font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;opacity:.6;margin-bottom:4px}
+.oq-kenm dd{margin:0;font-size:.95rem;line-height:1.3}
+.oq-kenm{grid-template-columns:repeat(auto-fit,minmax(84px,1fr));gap:12px 16px}
+
+/* ===== offertekaart: lichte, tonale variant (past bij de galerij en de crème pagina) =====
+   Onderzoek: diepte via tonale lagen en haarlijnen in plaats van zware donkere blokken;
+   donker alleen waar de aandacht heen moet (de hoofdknop). */
+.offerte-kaart{background:var(--creme-licht);color:var(--tekst-donker);border:1px solid rgba(58,51,44,.14);border-top:3px solid var(--zand-donker);box-shadow:0 1px 2px rgba(58,51,44,.05),0 18px 40px -22px rgba(58,51,44,.3)}
+.oq-titel .kaart-merk,.prod-info .oq-titel .kaart-merk{color:var(--zand-donker);opacity:1}
+.offerte-kaart h1,.oq-kop h2,.oq-klaar h3{color:var(--donker)}
+.oq-prijs .prod-prijs b{color:var(--donker)}
+.oq-prijs .prod-prijs s,.oq-prijs .prod-prijs small{color:var(--tekst-donker);opacity:.65}
+.oq-keuzes,.oq-sectie{border-top-color:rgba(58,51,44,.14)}
+.oq-keuzes .keuze-label,.oq-stap{color:var(--tekst-donker);opacity:.7}
+.oq-keuzes .keuze button{border-color:rgba(39,34,30,.4);color:var(--donker);background:transparent}
+.oq-keuzes .keuze button:hover{background:rgba(39,34,30,.06);border-color:var(--donker)}
+.oq-keuzes .keuze button[aria-pressed="true"]{background:var(--donker);color:var(--tekst-licht);border-color:var(--donker)}
+
+/* velden en tegels */
+.offerte-kaart input:not([type=checkbox]),.offerte-kaart select{background:#fffdfb;border:1px solid rgba(58,51,44,.26);color:var(--donker)}
+.offerte-kaart input:not([type=checkbox]):focus,.offerte-kaart select:focus{border-color:var(--donker)}
+.offerte-kaart input[type=checkbox]{accent-color:var(--donker)}
+.oq-rij .uitslag div{background:#efe4d8}
+.oq-rij .uitslag b{color:var(--donker)}
+.oq-rij .uitslag span{color:var(--tekst-donker);opacity:.8}
+.oq-noot,.oq-kenm dt{color:var(--tekst-donker)}
+.oq-noot{opacity:.75}
+.oq-noot a,.oq-links a,.oq-klaar a{color:var(--donker);text-decoration:underline;text-underline-offset:3px}
+.oq-samenvatting{border-left-color:var(--zand-donker)}
+.oq-bezoek summary{color:var(--zand-donker)}
+.oq-bezoek summary small{color:var(--tekst-donker)}
+
+/* knoppen: één donkere hoofdactie, de rest als omlijnd */
+.offerte-kaart .btn-zand{background:var(--donker);color:var(--tekst-licht)}
+.offerte-kaart .btn-zand:hover{background:var(--donker-3)}
+.offerte-kaart .btn-lijn{border-color:rgba(39,34,30,.5);color:var(--donker);background:transparent}
+.offerte-kaart .btn-lijn:hover{background:var(--donker);color:var(--tekst-licht)}
+
+/* ===== beschrijving en specificaties: compacter en in balans ===== */
+.detail{align-items:start}
+.detail>div{min-width:0}
+.hl-rij{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:12px;margin-top:clamp(24px,3vw,32px)}
+.hl-rij:empty{display:none}
+.hl{background:var(--creme-licht);border:1px solid rgba(58,51,44,.14);padding:16px 18px;display:flex;flex-direction:column;gap:6px}
+.hl b{font:1.5rem/1.1 var(--kop);color:var(--donker);letter-spacing:0}
+.hl span{font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;opacity:.7}
+.spec-grid{display:grid;grid-template-columns:1fr 1fr;gap:0 clamp(20px,3vw,40px);margin:0}
+.spec-grid>div{padding:14px 0;border-bottom:1px solid rgba(58,51,44,.14)}
+.spec-grid dt{font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;opacity:.65;margin-bottom:4px}
+.spec-grid dd{margin:0;font-size:1rem;line-height:1.35}
+@media (max-width:560px){.spec-grid{gap:0 16px}.hl{padding:14px}.hl b{font-size:1.25rem}}
+.hl{min-width:0;overflow:hidden}.hl-rij{grid-template-columns:repeat(3,minmax(0,1fr))}.hl b{font-size:1.35rem}@media (max-width:420px){.hl b{font-size:1.1rem}.hl span{letter-spacing:.08em}}
+.hl{padding:14px 14px}.hl span{font-size:.62rem;letter-spacing:.05em;hyphens:auto;overflow-wrap:break-word;line-height:1.35}
+
+/* ===== productkaarten: dezelfde lichte, tonale stijl als de offertekaart ===== */
+.kaart{background:var(--creme-licht);color:var(--tekst-donker);border:1px solid rgba(58,51,44,.12);box-shadow:0 1px 2px rgba(58,51,44,.05),0 14px 32px -22px rgba(58,51,44,.28)}
+.kaart .foto{background:#e9ddd0}
+.kaart .kaart-merk{color:var(--zand-donker);opacity:1}
+.kaart h3{color:var(--donker)}
+.kaart .kaart-meta{color:var(--tekst-donker);opacity:.7}
+.kaart .prijs b{color:var(--donker)}
+.kaart .prijs s{color:var(--tekst-donker);opacity:.55}
+.kaart .prijs .vanaf{color:var(--tekst-donker);opacity:.7}
+@media (prefers-reduced-motion:no-preference){
+  .kaart:hover{box-shadow:0 2px 4px rgba(58,51,44,.06),0 24px 44px -22px rgba(58,51,44,.38)}
+}
+.kaart:hover{box-shadow:0 2px 4px rgba(58,51,44,.06),0 24px 44px -22px rgba(58,51,44,.38)}
+@media (max-width:620px){
+  .kaarten.cat-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .kaarten.cat-grid .kaart{min-width:0}
+  .kaarten.cat-grid .prijs{flex-wrap:wrap;gap:0 6px;min-height:3.3rem;align-content:flex-start}
+  .kaarten.cat-grid .prijs .vanaf{flex:0 0 100%;font-size:.58rem}
+}

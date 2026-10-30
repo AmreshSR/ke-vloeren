@@ -1,0 +1,13 @@
+# Alleen het ontwerp staat in git; ruwe bronbestanden blijven lokaal.
+/*
+!/.gitignore
+!/site/
+!/tools/
+!/site-inventaris.md
+!/stijl-en-paginaopbouw.md
+!/.claude/
+/.claude/*
+!/.claude/launch.json
+node_modules/
+.DS_Store
+Thumbs.db

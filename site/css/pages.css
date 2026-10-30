@@ -1,0 +1,93 @@
+/* ===== binnenpagina's (vloeren + product) ===== */
+.pagina-kop{padding:64px 0 56px;background:var(--donker-2);border-bottom:1px solid rgba(214,192,163,.15)}
+.kruimel{font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;opacity:.8;margin-bottom:20px}
+.kruimel a{text-decoration:none}.kruimel a:hover{text-decoration:underline}
+.kruimel span{margin:0 .5em;opacity:.5}
+.pagina-kop h1{font-size:clamp(3rem,7vw,5rem)}
+.pagina-kop p{margin-top:16px}
+
+/* vloeren */
+.cat{display:grid;grid-template-columns:280px 1fr;gap:40px;align-items:start}
+.filters{background:var(--creme-licht);padding:24px;position:sticky;top:96px;max-height:calc(100vh - 112px);overflow:auto;box-shadow:0 2px 8px rgba(58,51,44,.12)}
+.filters h2{font-size:1.6rem;margin-bottom:4px}
+.fgroep{border-top:1px solid rgba(58,51,44,.15);padding:16px 0}
+.fgroep h3{font-size:1.1rem;letter-spacing:.08em;color:var(--zand-donker);margin-bottom:10px}
+.fopt{display:flex;align-items:center;gap:10px;padding:5px 0;font-size:.92rem;cursor:pointer}
+.fopt input{width:18px;height:18px;accent-color:var(--donker);flex:none}
+.fopt .n{margin-left:auto;font-size:.78rem;opacity:.6}
+.fopt.uit{opacity:.4}
+.reset{background:none;border:0;color:var(--donker);text-decoration:underline;font:inherit;font-size:.85rem;cursor:pointer;padding:0}
+.filter-toggle{display:none;width:100%;margin-bottom:16px;justify-content:center}
+.balk-boven{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;margin-bottom:20px;color:var(--tekst-donker)}
+.balk-boven select{font:inherit;padding:.6rem .8rem;border:1px solid var(--donker);background:var(--creme-licht);color:var(--donker)}
+.tel{font-weight:500}
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:20px}
+.chips:empty{display:none}
+.chip{background:var(--donker);color:var(--tekst-licht);border:0;padding:.4rem .8rem;font:inherit;font-size:.8rem;cursor:pointer}
+.chip::after{content:" ×";color:var(--zand)}
+.kaarten.cat-grid{grid-template-columns:repeat(3,1fr)}
+.kaart .foto{position:relative}
+.kaart .foto img.hover{position:absolute;inset:0;opacity:0;transition:opacity .35s,transform .5s}
+.kaart:hover .foto img.hover{opacity:1}
+.kaart-spec{margin-top:2px}
+.leeg{background:var(--creme-licht);padding:48px;text-align:center;color:var(--tekst-donker)}
+.info-blok{margin-top:40px;background:var(--donker);color:var(--tekst-licht);padding:32px;display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap;border-left:3px solid var(--zand)}
+.info-blok h3{font-size:1.6rem;color:var(--zand)}
+
+/* product */
+.prod{display:grid;grid-template-columns:7fr 5fr;gap:56px;align-items:start}
+.galerij .groot{aspect-ratio:1;background:var(--donker-2);overflow:hidden}
+.galerij .groot img{width:100%;height:100%;object-fit:cover}
+.thumbs{display:flex;gap:10px;margin-top:10px;flex-wrap:wrap}
+.thumbs button{width:84px;height:84px;padding:0;border:2px solid transparent;background:var(--donker-2);cursor:pointer;opacity:.7}
+.thumbs button[aria-current="true"]{border-color:var(--zand-donker);opacity:1}
+.thumbs img{width:100%;height:100%;object-fit:cover}
+.prod-info .kaart-merk{color:var(--zand-donker)}
+.prod-info h1{font-size:clamp(2.4rem,4.5vw,3.6rem);color:var(--donker);margin:6px 0 16px}
+.prod-prijs{display:flex;align-items:baseline;gap:14px;margin-bottom:6px}
+.prod-prijs b{font:3.4rem var(--kop);line-height:1;color:var(--donker)}
+.prod-prijs s{opacity:.55}
+.prod-prijs small{opacity:.7}
+.usp-lijst{list-style:none;padding:0;display:grid;gap:8px;margin:22px 0}
+.usp-lijst li{display:flex;gap:10px;align-items:center;font-size:.95rem}
+.usp-lijst li::before{content:"✓";display:grid;place-items:center;width:22px;height:22px;background:var(--donker);color:var(--zand);font-size:.8rem;flex:none}
+.prod-knoppen{display:flex;gap:12px;flex-wrap:wrap}
+.reken{background:var(--donker);color:var(--tekst-licht);padding:28px;margin-top:28px;border-top:3px solid var(--zand)}
+.reken h2{font-size:1.8rem;color:var(--zand);margin-bottom:12px}
+.reken label{font-size:.85rem;display:block;margin-bottom:6px}
+.reken input[type=number]{width:100%;padding:.8rem;font:inherit;font-size:1.1rem;background:var(--creme-licht);border:0;color:var(--donker)}
+.reken .check{display:flex;gap:8px;align-items:center;margin:12px 0;font-size:.85rem}
+.uitslag{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:14px}
+.uitslag div{background:var(--donker-2);padding:12px}
+.uitslag b{display:block;font:2rem var(--kop);color:var(--zand);line-height:1}
+.uitslag span{font-size:.75rem;opacity:.8}
+.reken small{display:block;margin-top:10px;opacity:.65;font-size:.75rem}
+.detail{display:grid;grid-template-columns:1fr 1fr;gap:56px;margin-top:72px}
+.detail h2{font-size:2.2rem;margin-bottom:16px}
+.spec{width:100%;border-collapse:collapse;font-size:.95rem}
+.spec th,.spec td{padding:11px 4px;text-align:left;border-bottom:1px solid rgba(58,51,44,.18)}
+.spec th{font-weight:500;width:45%}
+.form{display:grid;gap:14px;max-width:640px}
+.form .rij{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.form label{font-size:.85rem;display:block;margin-bottom:4px}
+.form input,.form textarea{width:100%;padding:.8rem;font:inherit;background:var(--creme-licht);border:1px solid transparent;color:var(--donker)}
+.form textarea{min-height:130px;resize:vertical}
+.form-uit{display:grid;grid-template-columns:5fr 7fr;gap:56px}
+.niet-gevonden{text-align:center;padding:120px 0}
+.bijpassend-kop{display:flex;justify-content:space-between;align-items:end;gap:24px;flex-wrap:wrap;margin-bottom:32px}
+
+@media (max-width:1020px){
+  .cat{grid-template-columns:1fr}
+  .filter-toggle{display:inline-flex}
+  .filters{display:none;position:static;max-height:none}
+  .filters.open{display:block;margin-bottom:24px}
+  .kaarten.cat-grid{grid-template-columns:repeat(2,1fr)}
+  .prod,.detail,.form-uit{grid-template-columns:1fr;gap:40px}
+}
+@media (max-width:620px){
+  .kaarten.cat-grid{grid-template-columns:1fr 1fr;gap:12px}
+  .kaarten.cat-grid .kaart-body{padding:12px}
+  .kaarten.cat-grid h3{font-size:1.05rem}
+  .kaarten.cat-grid .prijs b{font-size:1.6rem}
+  .form .rij{grid-template-columns:1fr}
+}

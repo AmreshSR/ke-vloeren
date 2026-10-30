@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Contact – K&E Vloeren Soest</title>
+<meta name="description" content="Neem contact op met K&E Vloeren in Soest. Bel 035 785 1272, mail ons of kom langs in de showroom. Vraag een vrijblijvende offerte aan.">
+<link rel="preload" href="fonts/ovo-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="css/fonts.css">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/pages.css">
+<link rel="stylesheet" href="css/info.css">
+<link rel="stylesheet" href="css/ademruimte.css">
+</head>
+<body>
+<div id="site-top"></div>
+<main>
+  <div class="pagina-kop" style="--kop-img:url(../img/showroom-4.webp)">
+    <div class="wrap">
+      <div class="kruimel"><a href="index.html">Home</a><span>/</span>Contact</div>
+      <h1>Contact <span class="zand">met ons</span></h1>
+      <p class="lead">Een vraag, een offerte of een afspraak? Bel, mail of kom langs. Wij helpen u graag.</p>
+    </div>
+  </div>
+
+  <section class="creme">
+    <div class="wrap">
+      <div class="contact-drie">
+        <div class="contact-kaart">
+          <h2>Bel ons</h2>
+          <span class="groot">035 785 1272</span>
+          <p>Telefonisch bereikbaar tijdens onze openingstijden: di – za, 10:00 – 18:00.</p>
+          <a class="btn btn-zand" href="tel:+31357851272">Bel nu</a>
+        </div>
+        <div class="contact-kaart">
+          <h2>Mail ons</h2>
+          <span class="groot" style="font-size:1.5rem;word-break:break-all">kevloeren@gmail.com</span>
+          <p>We streven ernaar uw vraag zo snel mogelijk te beantwoorden, zodat u met vertrouwen een vloer kiest.</p>
+          <a class="btn btn-zand" href="mailto:kevloeren@gmail.com">Stuur e-mail</a>
+        </div>
+        <div class="contact-kaart">
+          <h2>Kom langs</h2>
+          <span class="groot">Soest</span>
+          <p>Van Weedestraat 27, 3761 CB Soest. Vrijblijvend advies uit een breed assortiment vloeren.</p>
+          <a class="btn btn-zand" href="https://g.co/kgs/QaCdmpY" target="_blank" rel="noopener">Route (Google Maps)</a>
+        </div>
+      </div>
+
+      <div class="contact-onder">
+        <div class="tekst">
+          <span class="open-nu" aria-live="polite"></span>
+          <h3>Vestiging Soest</h3>
+          <address>Van Weedestraat 27<br>3761 CB Soest<br><a href="tel:+31357851272">035 785 1272</a><br><a href="mailto:kevloeren@gmail.com">kevloeren@gmail.com</a></address>
+          <table class="uren" style="color:var(--tekst-licht)" aria-label="Openingstijden">
+            <tr data-dag="1"><td>Maandag</td><td>gesloten</td></tr>
+            <tr data-dag="2"><td>Dinsdag</td><td>10:00 – 18:00</td></tr>
+            <tr data-dag="3"><td>Woensdag</td><td>10:00 – 18:00</td></tr>
+            <tr data-dag="4"><td>Donderdag</td><td>10:00 – 18:00</td></tr>
+            <tr data-dag="5"><td>Vrijdag</td><td>10:00 – 18:00</td></tr>
+            <tr data-dag="6"><td>Zaterdag</td><td>10:00 – 18:00</td></tr>
+            <tr data-dag="0"><td>Zondag</td><td>gesloten</td></tr>
+          </table>
+        </div>
+        <iframe class="kaart-embed" title="Kaart: K&E Vloeren, Van Weedestraat 27, Soest" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://maps.google.com/maps?q=Van+Weedestraat+27,+3761+CB+Soest&amp;output=embed"></iframe>
+      </div>
+    </div>
+  </section>
+
+  <section class="donker-2" id="formulier">
+    <div class="wrap afspraak">
+      <div>
+        <h2>Vragen? <span class="zand">Stel ze gerust</span></h2>
+        <p class="lead" style="margin-top:16px">Vul het formulier in en wij nemen zo snel mogelijk contact met u op. Voor een afspraak in de showroom kunt u ook <a href="showroom.html#afspraak" style="color:var(--zand)">direct een tijd kiezen</a>.</p>
+      </div>
+      <form class="form" data-mailto>
+        <div class="rij"><div><label for="naam">Naam *</label><input id="naam" required autocomplete="name"></div><div><label for="tel">Telefoonnummer</label><input id="tel" type="tel" autocomplete="tel"></div></div>
+        <div><label for="email">E-mailadres *</label><input id="email" type="email" required autocomplete="email"></div>
+        <div><label for="onderwerp">Onderwerp *</label><select id="onderwerp" required><option>Offerte aanvragen</option><option>Afspraak maken</option><option>Vraag over een vloer</option><option>Vraag over leggen of levering</option><option>Overig</option></select></div>
+        <div><label for="bericht">Bericht *</label><textarea id="bericht" required></textarea></div>
+        <div class="melding" role="status"></div>
+        <div><button class="btn btn-zand" type="submit">Verzenden</button></div>
+      </form>
+    </div>
+  </section>
+</main>
+<div id="site-bottom"></div>
+<script src="js/layout.js"></script>
+<script src="js/forms.js"></script>
+</body>
+</html>

@@ -1,0 +1,339 @@
+:root{
+  --donker:#27221E; --donker-2:#3C352D; --donker-3:#4A423A;
+  --creme:#ECE0D4; --creme-licht:#F6EEE7;
+  --zand:#D6C0A3; --zand-donker:#7D5B33;
+  --tekst-licht:#EEE2D6; --tekst-donker:#3A332C;
+  --actie:#DB2020;
+  --kop:'Ovo',Georgia,'Times New Roman',serif; --tekst:'Tenor Sans',system-ui,sans-serif;
+  --max:1200px;
+}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--tekst);background:var(--donker);color:var(--tekst-licht);line-height:1.6;-webkit-font-smoothing:antialiased}
+img,video{max-width:100%;display:block}
+a{color:inherit}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 24px}
+h1,h2,h3{font-family:var(--kop);font-weight:400;line-height:1;letter-spacing:.01em;text-transform:uppercase}
+h1{font-size:clamp(3.2rem,8vw,6.2rem)}
+h2{font-size:clamp(2.4rem,5vw,3.6rem)}
+h3{font-size:1.5rem}
+.zand{color:var(--zand)}
+.lead{font-size:1.05rem;max-width:52ch;opacity:.9}
+
+/* knoppen */
+.btn{display:inline-flex;align-items:center;gap:.6rem;padding:.95rem 1.5rem;font:500 .8rem var(--tekst);letter-spacing:.12em;text-transform:uppercase;text-decoration:none;border:1px solid transparent;cursor:pointer;transition:background .2s,color .2s,border-color .2s}
+.btn::after{content:"→";font-size:1rem;letter-spacing:0}
+.btn-zand{background:var(--zand);color:var(--donker)}
+.btn-zand:hover{background:var(--creme)}
+.btn-lijn{border-color:var(--zand);color:var(--zand)}
+.btn-lijn:hover{background:var(--zand);color:var(--donker)}
+.btn-donker{background:var(--donker);color:var(--tekst-licht)}
+.btn-donker:hover{background:var(--donker-3)}
+:focus-visible{outline:3px solid var(--zand);outline-offset:3px}
+.creme :focus-visible{outline-color:var(--donker)}
+
+/* secties */
+section{padding:96px 0}
+.creme{background:var(--creme) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='400' viewBox='0 0 600 400' fill='none' stroke='%23b8a28c' stroke-opacity='.22' stroke-width='1.2'%3E%3Cpath d='M-20 60C120 20 220 110 360 70S560 30 640 80'/%3E%3Cpath d='M-20 110C110 70 230 160 370 120S560 80 640 130'/%3E%3Cpath d='M-20 170C130 130 210 220 350 180S570 150 640 190'/%3E%3Cpath d='M-20 240C100 200 240 290 380 250S560 210 640 260'/%3E%3Cpath d='M-20 310C120 270 220 350 360 320S570 280 640 330'/%3E%3Cellipse cx='440' cy='215' rx='60' ry='26'/%3E%3Cellipse cx='440' cy='215' rx='34' ry='13'/%3E%3C/svg%3E");color:var(--tekst-donker)}
+.creme h2{color:var(--donker)}
+.donker-2{background:var(--donker-2)}
+.sec-kop{display:flex;justify-content:space-between;align-items:end;gap:32px;margin-bottom:48px;flex-wrap:wrap}
+
+/* aankondigingsbalk */
+.balk{background:var(--zand);color:var(--donker);text-align:center;font-size:.85rem;padding:.6rem 16px;font-weight:500}
+.balk a{font-weight:700}
+
+/* header */
+header{position:sticky;top:0;z-index:50;background:rgba(39,34,30,.96);backdrop-filter:blur(8px);border-bottom:1px solid rgba(214,192,163,.15)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:76px;gap:24px}
+.nav .logo img{height:44px;width:auto}
+.nav ul{display:flex;gap:28px;list-style:none;padding:0}
+.nav ul a,.nav-tel,.nav .btn{white-space:nowrap}
+.nav ul a{text-decoration:none;font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;padding:.4rem 0;border-bottom:2px solid transparent}
+.nav ul a:hover,.nav ul a[aria-current]{border-color:var(--zand)}
+.nav-rechts{display:flex;align-items:center;gap:16px}
+.nav-tel{display:flex;align-items:center;gap:.5rem;text-decoration:none;font-size:.9rem;font-weight:500}
+.burger{display:none;background:none;border:1px solid var(--zand);color:var(--zand);width:44px;height:44px;font-size:1.3rem;cursor:pointer}
+
+/* hero */
+.hero{padding:0;min-height:min(86vh,760px);display:grid;grid-template-columns:1fr 1fr}
+.hero-tekst{background:var(--donker);padding:72px max(24px,calc((100vw - var(--max))/2 + 24px)) 72px 24px;display:flex;flex-direction:column;justify-content:center;gap:28px;margin-left:auto;width:100%}
+.hero-tekst .in{max-width:540px;margin-left:auto}
+.hero h1 span{color:var(--zand);display:block}
+.hero-knoppen{display:flex;gap:12px;flex-wrap:wrap;margin-top:8px}
+.hero-info{display:flex;gap:24px;flex-wrap:wrap;font-size:.85rem;opacity:.85;margin-top:12px}
+.hero-info b{color:var(--zand);font-weight:500}
+.hero-foto{position:relative;overflow:hidden}
+.hero-foto img{width:100%;height:100%;object-fit:cover;object-position:center 40%}
+.hero-foto::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(39,34,30,.45),transparent 40%)}
+.hero-label{position:absolute;right:24px;bottom:24px;z-index:2;background:var(--donker);padding:14px 18px;font-size:.8rem;border-left:3px solid var(--zand)}
+.hero-label b{display:block;font:1.6rem var(--kop);color:var(--zand);letter-spacing:.02em}
+
+/* aanbiedingsband */
+.band{background:var(--donker-2);padding:20px 0;border-block:1px solid rgba(214,192,163,.15)}
+.band .wrap{display:flex;align-items:center;justify-content:center;gap:20px;flex-wrap:wrap;text-align:center}
+.band strong{font:1.5rem var(--kop);letter-spacing:.03em;color:var(--zand)}
+.badge{background:var(--actie);color:#fff;font:.7rem var(--tekst);font-weight:700;letter-spacing:.12em;padding:.3rem .6rem;text-transform:uppercase}
+
+/* merken */
+.merken{padding:48px 0;background:var(--donker-2)}
+.merken .wrap{display:flex;justify-content:space-around;align-items:center;gap:32px;flex-wrap:wrap}
+.merk{font:2rem var(--kop);letter-spacing:.08em;color:var(--zand);opacity:.75}
+.merken small{display:block;text-align:center;font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;opacity:.55;margin-bottom:20px}
+
+/* over ons */
+.over{display:grid;grid-template-columns:5fr 7fr;gap:64px;align-items:start}
+.ervaring{background:var(--donker);color:var(--tekst-licht);padding:40px;position:relative;margin-left:16px;margin-top:16px;box-shadow:-16px -16px 0 -1px var(--creme),-16px -16px 0 0 var(--donker-3)}
+.ervaring .kop{font:2.6rem/1 var(--kop);text-transform:uppercase;color:var(--zand);margin-bottom:12px}
+.ervaring p{font-size:.95rem;margin-bottom:20px;opacity:.9}
+.over h2{margin-bottom:8px}
+.over .sub{font:clamp(1.8rem,3.4vw,2.6rem) var(--kop);color:var(--zand-donker);text-transform:uppercase;line-height:1.05;margin-bottom:20px}
+.tellers{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:36px}
+.teller{background:var(--creme-licht);padding:22px 12px;text-align:center;box-shadow:0 2px 8px rgba(58,51,44,.12)}
+.teller:first-child{background:var(--donker);color:var(--tekst-licht)}
+.teller b{display:block;font:2.8rem var(--kop);line-height:1}
+.teller span{font-size:.8rem;letter-spacing:.05em}
+
+/* waarom + reviews */
+.waarom{display:grid;grid-template-columns:1fr 1fr;padding:0}
+.waarom-foto{min-height:520px;position:relative}
+.waarom-foto img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.waarom-in{padding:96px max(24px,calc((100vw - var(--max))/2 + 24px)) 96px 64px}
+.usp{display:grid;gap:12px;margin-top:36px}
+.usp-item{display:grid;grid-template-columns:48px 1fr;gap:16px;background:var(--donker-2);padding:20px;border-left:3px solid var(--zand)}
+.usp-item:nth-child(2){background:var(--creme-licht);color:var(--tekst-donker)}
+.usp-item svg{width:40px;height:40px;stroke:var(--zand);fill:none;stroke-width:1.5}
+.usp-item:nth-child(2) svg{stroke:var(--donker)}
+.usp-item h3{font-size:1.25rem;margin-bottom:4px}
+.usp-item p{font-size:.9rem;opacity:.9}
+
+/* producten */
+.kaarten{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.kaart{background:var(--donker);color:var(--tekst-licht);text-decoration:none;display:flex;flex-direction:column;position:relative;transition:transform .25s}
+.kaart:hover{transform:translateY(-4px)}
+.kaart .foto{aspect-ratio:1;overflow:hidden;background:var(--donker-2)}
+.kaart img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
+.kaart:hover img{transform:scale(1.05)}
+.kaart .badge{position:absolute;top:12px;left:12px}
+.kaart-body{padding:18px 18px 22px;display:grid;gap:6px}
+.kaart-merk{font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:var(--zand);opacity:.85}
+.kaart h3{font-size:1.3rem;line-height:1.1}
+.prijs{display:flex;align-items:baseline;gap:10px;margin-top:6px}
+.prijs b{font:2rem var(--kop);color:var(--zand);line-height:1}
+.prijs s{opacity:.6;font-size:.9rem}
+.prijs small{opacity:.7;font-size:.75rem}
+.kaart-spec{font-size:.78rem;opacity:.7}
+
+/* werkwijze */
+.stappen{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.stap{background:var(--donker);color:var(--tekst-licht);padding:32px 24px;position:relative;border-top:3px solid var(--zand)}
+.stap h3{color:var(--creme-licht)}
+.stap .nr{font:3.6rem var(--kop);color:var(--zand);line-height:1;margin-bottom:12px}
+.stap h3{margin-bottom:8px}
+.stap p{font-size:.9rem;opacity:.85}
+
+/* reviews */
+.reviews{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.review{padding:36px;position:relative;min-height:240px;display:flex;flex-direction:column;justify-content:space-between;gap:24px}
+.review.d{background:var(--donker-2);color:var(--tekst-licht)}
+.review.z{background:var(--zand);color:var(--donker)}
+.sterren{letter-spacing:.2em;font-size:1.1rem}
+.review.d .sterren{color:var(--zand)}
+.review .wie{font-weight:700;font-size:.9rem}
+.review q{font-size:1.05rem;quotes:none}
+.plaats{position:absolute;top:12px;right:12px;font-size:.65rem;letter-spacing:.12em;text-transform:uppercase;background:var(--actie);color:#fff;padding:.2rem .5rem;font-weight:700}
+
+/* faq */
+.faq{display:grid;grid-template-columns:4fr 8fr;gap:64px}
+.faq-lijst{display:grid;gap:8px}
+details{background:var(--donker-2)}
+details[open]{background:var(--donker-3)}
+summary{list-style:none;cursor:pointer;padding:20px 24px;display:flex;justify-content:space-between;gap:16px;font:1.1rem var(--kop);letter-spacing:.05em;text-transform:uppercase}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";color:var(--zand);font:1.6rem var(--tekst);line-height:1}
+details[open] summary::after{content:"–"}
+details p{padding:0 24px 22px;font-size:.95rem;opacity:.9;max-width:70ch}
+.faq-extra{margin-top:20px;font-size:.95rem}
+
+/* showroom */
+.showroom{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+.sr-media{position:relative}
+.sr-media video,.sr-media img.hoofd{width:100%;aspect-ratio:4/5;object-fit:cover;box-shadow:-16px 16px 0 var(--zand)}
+.sr-kleine{position:absolute;right:-24px;bottom:-32px;width:42%;border:6px solid var(--creme);box-shadow:0 6px 18px rgba(0,0,0,.25)}
+.contact-blok{display:grid;gap:14px;margin:28px 0}
+.contact-blok div{display:grid;grid-template-columns:110px 1fr;gap:12px;font-size:.95rem;border-bottom:1px solid rgba(58,51,44,.18);padding-bottom:12px}
+.contact-blok dt{font:1.1rem var(--kop);letter-spacing:.08em;color:var(--zand-donker)}
+.contact-blok dd{margin:0}
+.contact-blok a{font-weight:500}
+.sr-knoppen{display:flex;gap:12px;flex-wrap:wrap}
+.btn-lijn-donker{border-color:var(--donker);color:var(--donker)}
+.btn-lijn-donker:hover{background:var(--donker);color:var(--creme)}
+
+/* cta */
+.cta{text-align:center;padding:80px 0;background:var(--donker-2)}
+.cta p{margin:16px auto 28px;max-width:48ch;opacity:.9}
+.cta .hero-knoppen{justify-content:center}
+
+/* footer */
+footer{background:var(--donker);padding:72px 0 88px;font-size:.9rem;border-top:1px solid rgba(214,192,163,.15)}
+.foot{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:40px}
+.foot img{height:48px;margin-bottom:16px}
+.foot-kop{font:1.2rem var(--kop);letter-spacing:.08em;color:var(--zand);margin-bottom:12px;font-weight:400}
+.foot ul{list-style:none;padding:0;display:grid;gap:8px}
+.foot a{text-decoration:none;opacity:.85}.foot a:hover{opacity:1;text-decoration:underline}
+.social{display:flex;gap:10px;margin-top:16px}
+.social a{border:1px solid var(--zand);padding:.4rem .8rem;font-size:.75rem;letter-spacing:.1em;text-transform:uppercase;color:var(--zand);opacity:1}
+.onder{margin-top:48px;padding-top:20px;border-top:1px solid rgba(214,192,163,.15);display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;font-size:.78rem;opacity:.7}
+
+/* whatsapp */
+.wa{position:fixed;right:20px;bottom:20px;z-index:60;background:#128C7E;color:#fff;width:56px;height:56px;border-radius:50%;display:grid;place-items:center;box-shadow:0 6px 18px rgba(0,0,0,.35)}
+.wa svg{width:30px;height:30px;fill:#fff}
+
+/* reveal */
+.rv{opacity:0;transform:translateY(20px);transition:opacity .7s,transform .7s}
+.rv.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}}
+
+/* responsive */
+@media (max-width:1020px){
+  .nav ul{display:none}
+  .nav ul.open{display:flex;position:absolute;top:76px;left:0;right:0;background:var(--donker);flex-direction:column;padding:24px;gap:18px;border-bottom:1px solid var(--zand)}
+  .burger{display:block}
+  .nav-tel span{display:none}
+  .hero{grid-template-columns:1fr}
+  .hero-tekst .in{margin:0}
+  .hero-tekst{padding:56px 24px}
+  .hero-foto{min-height:380px}
+  .over,.faq,.showroom{grid-template-columns:1fr;gap:40px}
+  .waarom{grid-template-columns:1fr}
+  .waarom-in{padding:64px 24px}
+  .kaarten,.stappen{grid-template-columns:repeat(2,1fr)}
+  .foot{grid-template-columns:1fr 1fr}
+  .sr-kleine{right:0}
+}
+@media (max-width:620px){
+  section{padding:64px 0}
+  .kaarten,.stappen,.reviews{grid-template-columns:1fr}
+  .tellers{grid-template-columns:1fr}
+  .foot{grid-template-columns:1fr}
+  .nav-rechts .btn{display:none}
+  .ervaring{margin-left:0;box-shadow:none}
+  .contact-blok div{grid-template-columns:1fr;gap:2px}
+}
+
+.skip{position:absolute;left:12px;top:-60px;z-index:200;background:var(--zand);color:var(--donker);padding:.7rem 1rem;font-weight:700;text-decoration:none}
+.skip:focus{top:12px}
+
+.merken a{text-decoration:none}
+.merk-logo{display:flex;align-items:center;opacity:.9;transition:opacity .2s}
+.merk-logo:hover{opacity:1}
+.merk-logo img{width:auto;max-width:100%}
+a.merk:hover{opacity:1}
+
+/* merkkaarten (home) */
+.merken-groot{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.merk-kaart{background:var(--donker);padding:36px 28px;text-align:center;border-top:3px solid var(--zand)}
+.merk-kaart b{display:block;font:2.6rem var(--kop);letter-spacing:.08em;color:var(--zand);margin-bottom:8px}
+.merk-img{display:block;margin:0 auto 14px;width:auto;max-width:100%}
+.merk-kaart p{font-size:.9rem;opacity:.85}
+.merk-kaart a{display:inline-block;margin-top:14px;color:var(--zand);font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;text-decoration:none;border-bottom:1px solid var(--zand);padding-bottom:2px}
+.merken-rij{display:flex;justify-content:space-around;align-items:center;gap:32px;flex-wrap:wrap;margin-top:8px}
+@media (max-width:1020px){.merken-groot{grid-template-columns:1fr}}
+.merken-rij a{text-decoration:none}
+.merk-kaart{display:flex;flex-direction:column;align-items:center}
+.logo-vak{height:80px;width:100%;display:flex;align-items:center;justify-content:center;margin-bottom:14px}
+.logo-vak .merk-img{margin:0}
+.logo-vak b{margin:0}
+.merk-kaart p{flex:1}
+.merk-kaart a{margin-top:18px}
+
+/* hero-carrousel */
+.carousel{position:absolute;inset:0}
+.carousel .slide{position:absolute;inset:0;opacity:0;transition:opacity .9s ease}
+.carousel .slide.actief{opacity:1;z-index:1}
+.carousel .slide img{width:100%;height:100%;object-fit:cover;object-position:center 40%}
+.car-bed{position:absolute;left:24px;bottom:24px;z-index:3;display:flex;align-items:center;gap:10px;background:rgba(39,34,30,.88);padding:8px 10px}
+.car-bed button{background:none;border:1px solid transparent;color:var(--tekst-licht);width:36px;height:36px;font-size:1rem;cursor:pointer;display:grid;place-items:center}
+.car-bed button:hover{border-color:var(--zand);color:var(--zand)}
+.car-pauze{font-size:.65rem !important;letter-spacing:-1px}
+.car-dots{display:flex;gap:8px}
+.car-dots button{width:12px;height:12px;padding:0;border:1px solid var(--zand);border-radius:50%;background:transparent}
+.car-dots button[aria-selected="true"]{background:var(--zand)}
+.hero-foto::after{z-index:2}
+.hero-label{z-index:3}
+@media (max-width:620px){.car-bed{left:12px;bottom:12px}.hero-label{right:12px;bottom:68px}}
+.car-bed{opacity:0;transition:opacity .25s}
+.hero-foto:hover .car-bed,.car-bed:focus-within{opacity:1}
+@media (hover:none){.car-bed{opacity:1}}
+
+/* ===== beweging (premium-gevoel) ===== */
+:root{--e:cubic-bezier(.22,.8,.24,1)}
+.nav ul a{border-bottom:0;position:relative}
+.nav ul a::after{content:"";position:absolute;left:0;right:0;bottom:-3px;height:2px;background:var(--zand);transform:scaleX(0);transform-origin:left;transition:transform .35s var(--e)}
+.nav ul a:hover::after,.nav ul a[aria-current]::after{transform:scaleX(1)}
+header{transition:box-shadow .3s}
+header.scrolled{box-shadow:0 8px 24px rgba(0,0,0,.28)}
+.nav{transition:height .3s var(--e)}
+header.scrolled .nav{height:64px}
+.nav .logo img{transition:height .3s var(--e)}
+header.scrolled .nav .logo img{height:38px}
+header::after{content:"";position:absolute;left:0;right:0;bottom:-1px;height:2px;background:var(--zand);transform:scaleX(var(--p,0));transform-origin:left}
+
+@media (prefers-reduced-motion:no-preference){
+  /* onthullen: gebruikt 'translate'/'scale' zodat hover-transform vrij blijft */
+  .rv{opacity:0;transform:none;translate:0 26px;transition:opacity .8s var(--e) var(--d,0s),translate .8s var(--e) var(--d,0s),transform .3s var(--e),box-shadow .3s}
+  .rv.in{opacity:1;translate:none}
+  .rv-zoom{opacity:0;scale:1.05;transition:opacity 1s var(--e),scale 1.3s var(--e)}
+  .rv-zoom.in{opacity:1;scale:1}
+
+  /* hero: tekst komt binnen, foto rust uit */
+  .hero-tekst .in>*{animation:omhoog .9s var(--e) both}
+  .hero-tekst .in>*:nth-child(1){animation-delay:.1s}
+  .hero-tekst .in>*:nth-child(2){animation-delay:.2s}
+  .hero-tekst .in>*:nth-child(3){animation-delay:.32s}
+  .hero-tekst .in>*:nth-child(4){animation-delay:.44s}
+  .hero-tekst .in>*:nth-child(5){animation-delay:.56s}
+  .hero-label{animation:omhoog .9s var(--e) .8s both}
+  .carousel .slide.actief img{animation:rust 7s ease-out both}
+  @keyframes omhoog{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:none}}
+  @keyframes rust{from{transform:scale(1.07)}to{transform:scale(1)}}
+  main{animation:binnen .6s var(--e) both}
+  @keyframes binnen{from{opacity:0}to{opacity:1}}
+
+  /* parallax in 'waarom'-foto */
+  .waarom-foto img.parallax{transform:translate3d(0,var(--py,0%),0) scale(1.14);will-change:transform}
+
+  /* knoppen */
+  .btn{transition:background .25s,color .25s,border-color .25s,transform .25s var(--e),box-shadow .25s}
+  .btn::after{display:inline-block;transition:transform .3s var(--e)}
+  .btn:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(0,0,0,.22)}
+  .btn:hover::after{transform:translateX(5px)}
+  .btn:active{transform:none;box-shadow:none}
+
+  /* kaarten, kaders, tellers */
+  .kaart{transition:transform .35s var(--e),box-shadow .35s,opacity .8s var(--e) var(--d,0s),translate .8s var(--e) var(--d,0s)}
+  .kaart:hover{transform:translateY(-6px);box-shadow:0 18px 34px rgba(0,0,0,.28)}
+  .merk-kaart,.assort-kaart,.contact-kaart,.waarde,.stap,.review,.usp-item,.teller{transition:transform .35s var(--e),box-shadow .35s,opacity .8s var(--e) var(--d,0s),translate .8s var(--e) var(--d,0s)}
+  .merk-kaart:hover,.assort-kaart:hover,.contact-kaart:hover,.waarde:hover,.stap:hover,.review:hover{transform:translateY(-5px);box-shadow:0 16px 30px rgba(0,0,0,.25)}
+  .usp-item:hover{transform:translateX(6px)}
+  .teller:hover{transform:translateY(-4px)}
+  .merk-logo img{transition:transform .35s var(--e)}
+  .merk-logo:hover img{transform:scale(1.06)}
+  .galerij-sr button{transition:opacity .8s var(--e) var(--d,0s),translate .8s var(--e) var(--d,0s),box-shadow .3s}
+  .galerij-sr button:hover{box-shadow:0 14px 30px rgba(0,0,0,.3)}
+
+  /* tekstlinks in tekst en footer */
+  .foot a,.merk-kaart a,.assort-kaart a{transition:color .2s,border-color .2s,opacity .2s}
+  summary{transition:background .25s}
+  summary:hover{background:rgba(214,192,163,.08)}
+
+  /* whatsapp: een paar keer een zachte ring, daarna rust */
+  .wa{transition:transform .3s var(--e)}
+  .wa:hover{transform:scale(1.08)}
+  .wa::before{content:"";position:absolute;inset:0;border-radius:50%;border:2px solid #128C7E;animation:ring 2.4s ease-out 2s 3}
+  @keyframes ring{from{opacity:.7;transform:scale(1)}to{opacity:0;transform:scale(1.7)}}
+
+  /* tabs/filters */
+  .chip,.tabs button{transition:transform .2s var(--e),background .2s,color .2s}
+  .chip:hover,.tabs button:hover{transform:translateY(-1px)}
+}

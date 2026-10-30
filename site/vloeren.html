@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PVC vloeren – K&E Vloeren Soest</title>
+<meta name="description" content="Alle PVC vloeren van K&E Vloeren: visgraat en plank, klik en plak. Alles op voorraad in Soest. Prijzen per m².">
+<link rel="preload" href="fonts/ovo-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="css/fonts.css">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/pages.css">
+<link rel="stylesheet" href="css/ademruimte.css">
+</head>
+<body>
+<div id="site-top"></div>
+<main>
+  <div class="pagina-kop" style="--kop-img:url(../img/showroom-wand.webp)">
+    <div class="wrap">
+      <div class="kruimel"><a href="index.html">Home</a><span>/</span>Vloeren</div>
+      <h1 id="titel">Onze <span class="zand">vloeren</span></h1>
+      <p class="lead">PVC visgraat en plank, klik en plak. Alles op voorraad in onze showroom in Soest. Alle prijzen per m².</p>
+    </div>
+  </div>
+  <section class="creme compact">
+    <div class="wrap cat">
+      <button class="btn btn-donker filter-toggle" id="ftoggle" aria-expanded="false" aria-controls="filters">Filters</button>
+      <aside class="filters" id="filters" aria-label="Filters"></aside>
+      <div>
+        <div class="balk-boven">
+          <span class="tel" id="teller" aria-live="polite"></span>
+          <label>Sorteer: <select id="sort">
+            <option value="aanbieding">Aanbiedingen eerst</option>
+            <option value="prijs-op">Prijs laag – hoog</option>
+            <option value="prijs-af">Prijs hoog – laag</option>
+            <option value="naam">Naam A – Z</option>
+          </select></label>
+        </div>
+        <div class="chips" id="chips"></div>
+        <div class="kaarten cat-grid" id="grid"></div>
+        <div class="info-blok">
+          <div><h3>Laminaat of parket nodig?</h3><p>Dat hebben we in de showroom in Soest. Kom langs voor advies.</p></div>
+          <a class="btn btn-zand" href="showroom.html#afspraak">Plan een afspraak</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+<div id="site-bottom"></div>
+<script src="js/layout.js"></script>
+<script src="js/catalog.js"></script>
+</body>
+</html>
