@@ -21,11 +21,6 @@
   // open/gesloten + vandaag markeren (Europe/Amsterdam)
   const nu = new Date(new Date().toLocaleString('en-US', {timeZone: 'Europe/Amsterdam'}));
   const dag = nu.getDay(), uur = nu.getHours() + nu.getMinutes() / 60;
-  const open = dag >= 2 && dag <= 6 && uur >= 10 && uur < 18;
-  document.querySelectorAll('.open-nu').forEach(el => {
-    el.classList.add(open ? 'open' : 'dicht');
-    el.textContent = open ? 'Nu geopend · tot 18:00' : (dag >= 2 && dag <= 6 && uur < 10 ? 'Nu gesloten · open vanaf 10:00' : 'Nu gesloten · open di – za vanaf 10:00');
-  });
   const rij = document.querySelector(`.uren tr[data-dag="${dag}"]`);
   if(rij) rij.classList.add('vandaag');
 
