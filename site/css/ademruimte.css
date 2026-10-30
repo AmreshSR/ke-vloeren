@@ -682,3 +682,17 @@ button.btn{font-family:var(--tekst);border-radius:0}
 .hero-sub{margin-top:clamp(20px,2.4vw,28px)!important;max-width:34ch;font-size:1.1rem;opacity:.85}
 .hero h1{font-size:clamp(2.6rem,4.6vw,4.1rem);max-width:none;text-wrap:balance}
 .hero h1 span{display:inline}
+
+/* vier kaarten in een rij altijd even breed, ook als de inhoud van één kaart breder is */
+@media (min-width:1021px){
+  .kaarten:not(.cat-grid){grid-template-columns:repeat(4,minmax(0,1fr))}
+}
+.kaarten .kaart{min-width:0}
+.teller-sub,.kaart-meta .uitv{opacity:.5}
+.contact-blok{gap:26px}
+.contact-blok div{grid-template-columns:170px 1fr;gap:12px 32px;padding-bottom:26px;align-items:baseline}
+.contact-blok dd{line-height:1.8}
+@media (max-width:600px){.contact-blok div{grid-template-columns:1fr;gap:6px}}
+.sr-knoppen{display:grid;grid-template-columns:1fr 1fr}
+.sr-knoppen .btn{justify-content:center}
+.sr-knoppen .btn:first-child{grid-column:1/-1}

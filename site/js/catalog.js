@@ -75,14 +75,15 @@
       <div class="kaart-body">
         <span class="kaart-merk">${esc(d.merkLabel)}</span>
         <h3>${esc(d.model)}</h3>
-        <span class="kaart-meta">${esc(d.patronen.join(' · '))}</span>
+        <span class="kaart-meta">${esc(d.patronen.join(' · '))}${vs.length > 1 ? `<span class="uitv"> · ${vs.length}×</span>` : ''}</span>
         <div class="prijs">${verschil ? '<span class="vanaf">vanaf</span>' : ''}<b>${euro(num(best.prijs))}</b>${best.aanbieding ? `<s>${euro(num(best.normale_prijs))}</s>` : ''}<small>/m²</small></div>
       </div></a>`;
   }
 
   function render(){
     const items = sorted(D.map(d => { const vs = passend(d); return vs.length ? {d, vs, best: laagste(vs)} : null; }).filter(Boolean));
-    $('teller').textContent = `${items.length} van ${D.length} vloeren`;
+    const uitv = items.reduce((s, i) => s + i.vs.length, 0);
+    $('teller').innerHTML = `${items.length} van ${D.length} vloeren <span class="teller-sub">· ${uitv} uitvoeringen</span>`;
     $('grid').innerHTML = items.length ? items.map(card).join('')
       : '<div class="leeg" style="grid-column:1/-1"><h3>Geen vloeren gevonden</h3><p style="margin:8px 0 16px">Probeer een filter uit te zetten.</p><button class="btn btn-donker" id="reset2">Wis filters</button></div>';
     const chips = [];
