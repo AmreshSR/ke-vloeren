@@ -676,3 +676,9 @@ button.btn{font-family:var(--tekst);border-radius:0}
   .kaarten.cat-grid .prijs{flex-wrap:wrap;gap:0 6px;min-height:3.3rem;align-content:flex-start}
   .kaarten.cat-grid .prijs .vanaf{flex:0 0 100%;font-size:.58rem}
 }
+
+/* hero: één kop, één regel, twee knoppen */
+.hero h1{font-size:clamp(2.8rem,5.4vw,4.6rem);line-height:1.04;max-width:12ch}
+.hero-sub{margin-top:clamp(20px,2.4vw,28px)!important;max-width:34ch;font-size:1.1rem;opacity:.85}
+.hero h1{font-size:clamp(2.6rem,4.6vw,4.1rem);max-width:none;text-wrap:balance}
+.hero h1 span{display:inline}
